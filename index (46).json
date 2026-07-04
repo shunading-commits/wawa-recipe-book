@@ -1,0 +1,59 @@
+const storage = require('../../utils/storage');
+
+Page({
+  data: {
+    categories: [],
+    newName: '',
+    confirming: false,
+    deleteId: ''
+  },
+  onShow() {
+    this.load();
+  },
+  load() {
+    this.setData({ categories: storage.getCategories() });
+  },
+  inputNew(e) {
+    this.setData({ newName: e.detail.value });
+  },
+  add() {
+    const result = storage.saveCategory(this.data.newName);
+    if (!result.ok) {
+      wx.showToast({ title: result.message || '新增失败', icon: 'none' });
+      return;
+    }
+    this.setData({ newName: '' });
+    this.load();
+  },
+  rename(e) {
+    const result = storage.updateCategory(e.currentTarget.dataset.id, e.detail.value);
+    if (!result.ok) wx.showToast({ title: result.message || '修改失败', icon: 'none' });
+    this.load();
+  },
+  move(index, step) {
+    const categories = this.data.categories.slice();
+    const next = index + step;
+    if (index <= 0 || next <= 0 || next >= categories.length) return;
+    [categories[index], categories[next]] = [categories[next], categories[index]];
+    storage.reorderCategories(categories);
+    this.load();
+  },
+  up(e) {
+    this.move(e.currentTarget.dataset.index, -1);
+  },
+  down(e) {
+    this.move(e.currentTarget.dataset.index, 1);
+  },
+  askDelete(e) {
+    this.setData({ confirming: true, deleteId: e.currentTarget.dataset.id });
+  },
+  closeConfirm() {
+    this.setData({ confirming: false, deleteId: '' });
+  },
+  deleteCategory() {
+    const result = storage.deleteCategory(this.data.deleteId);
+    if (!result.ok) wx.showToast({ title: result.message || '删除失败', icon: 'none' });
+    this.closeConfirm();
+    this.load();
+  }
+});

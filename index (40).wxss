@@ -1,0 +1,46 @@
+.step {
+  margin-bottom: 20rpx;
+  padding: 20rpx;
+  background: #FFFFFF;
+  border: 1rpx solid #DDE9E0;
+  border-radius: 16rpx;
+}
+.head {
+  margin-bottom: 12rpx;
+  color: #357A4A;
+  font-weight: 700;
+}
+textarea {
+  width: 100%;
+  min-height: 132rpx;
+  padding: 16rpx;
+  box-sizing: border-box;
+  background: #F7FBF6;
+  border-radius: 12rpx;
+}
+.image-line {
+  display: flex;
+  align-items: center;
+  gap: 16rpx;
+  margin-top: 14rpx;
+}
+.image-line image {
+  width: 110rpx;
+  height: 110rpx;
+  border-radius: 12rpx;
+}
+.ops {
+  display: flex;
+  gap: 12rpx;
+  margin-top: 14rpx;
+}
+button {
+  color: #357A4A;
+  background: #DFF3E2;
+  border-radius: 999rpx;
+}
+.add {
+  width: 100%;
+  color: #FFFFFF;
+  background: #69B96B;
+}

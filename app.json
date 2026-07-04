@@ -1,0 +1,7 @@
+App({
+  onLaunch() {
+    // 初始化本地数据，菜谱和收藏保持为空。
+    const storage = require('./utils/storage');
+    storage.initLocalData();
+  }
+});

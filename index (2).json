@@ -1,0 +1,14 @@
+Component({
+  properties: {
+    categories: Array,
+    activeId: String
+  },
+  methods: {
+    select(e) {
+      this.triggerEvent('select', { id: e.currentTarget.dataset.id });
+    },
+    manage() {
+      wx.navigateTo({ url: '/pages/category-manage/index' });
+    }
+  }
+});

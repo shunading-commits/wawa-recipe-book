@@ -1,0 +1,10 @@
+<view>
+  <view wx:if="{{open}}" class="mask" bindtap="close"></view>
+  <view wx:if="{{open}}" class="sheet card">
+    <view class="sheet-title">添加菜谱</view>
+    <view class="option" bindtap="manual">手动添加</view>
+    <view class="option" bindtap="importUrl">链接导入</view>
+    <view class="option" bindtap="category">分类管理</view>
+  </view>
+  <view class="fab" bindtap="toggle">+</view>
+</view>

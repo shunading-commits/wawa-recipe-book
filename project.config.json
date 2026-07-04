@@ -1,0 +1,55 @@
+page {
+  background: linear-gradient(180deg, #F5FBF4 0%, #FFFFFF 100%);
+  color: #23352A;
+  font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", sans-serif;
+}
+
+.page {
+  min-height: 100vh;
+  box-sizing: border-box;
+  padding: 24rpx 24rpx 160rpx;
+  background: linear-gradient(180deg, #F3FAF2 0%, #FBFEFA 70%);
+}
+
+.card {
+  background: rgba(255, 255, 255, 0.94);
+  border-radius: 24rpx;
+  box-shadow: 0 14rpx 36rpx rgba(53, 122, 74, 0.08);
+  border: 1rpx solid rgba(105, 185, 107, 0.10);
+}
+
+button::after {
+  border: 0;
+}
+
+.primary-btn {
+  background: #69B96B;
+  color: #FFFFFF;
+  border-radius: 999rpx;
+  font-weight: 600;
+}
+
+.ghost-btn {
+  color: #357A4A;
+  border: 2rpx solid #69B96B;
+  background: #FFFFFF;
+  border-radius: 999rpx;
+}
+
+.field {
+  padding: 26rpx 0;
+  border-bottom: 1rpx solid #E6EFE8;
+}
+
+.label {
+  display: block;
+  margin-bottom: 14rpx;
+  color: #357A4A;
+  font-weight: 600;
+}
+
+input,
+textarea,
+picker {
+  box-sizing: border-box;
+}

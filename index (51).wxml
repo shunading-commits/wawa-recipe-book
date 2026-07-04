@@ -1,0 +1,17 @@
+const storage = require('../../utils/storage');
+
+Page({
+  data: {
+    recipes: []
+  },
+  onShow() {
+    this.setData({ recipes: storage.getRecipes().filter(item => item.isFavorite) });
+  },
+  openRecipe(e) {
+    wx.navigateTo({ url: '/pages/recipe-detail/index?id=' + e.detail.id });
+  },
+  favorite(e) {
+    storage.toggleFavorite(e.detail.id);
+    this.onShow();
+  }
+});

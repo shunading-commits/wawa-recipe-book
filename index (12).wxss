@@ -1,0 +1,16 @@
+Component({
+  properties: {
+    title: String,
+    desc: String,
+    primaryText: String,
+    secondaryText: String
+  },
+  methods: {
+    onPrimary() {
+      this.triggerEvent('primary');
+    },
+    onSecondary() {
+      this.triggerEvent('secondary');
+    }
+  }
+});

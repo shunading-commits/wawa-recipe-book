@@ -1,0 +1,27 @@
+<view class="page menu-page">
+  <view class="hero card">
+    <frog-logo small="{{true}}"></frog-logo>
+    <view class="hero-text">
+      <view class="title">蛙蛙电子菜谱</view>
+      <view class="sub">把家里的味道收进一本小菜谱</view>
+    </view>
+    <view class="hero-actions">
+      <button bindtap="goSearch">搜索</button>
+      <button open-type="share">分享</button>
+    </view>
+  </view>
+
+  <view wx:if="{{recipes.length === 0}}" class="empty-wrap card">
+    <empty-state title="还没有菜谱" desc="添加你的第一道菜谱吧" primary-text="手动添加" secondary-text="链接导入" bind:primary="addManual" bind:secondary="importUrl"></empty-state>
+  </view>
+
+  <view wx:else class="layout">
+    <category-sidebar categories="{{categories}}" active-id="{{activeCategoryId}}" bind:select="selectCategory"></category-sidebar>
+    <scroll-view scroll-y class="list">
+      <recipe-card wx:for="{{filteredRecipes}}" wx:key="id" recipe="{{item}}" bind:open="openRecipe" bind:favorite="favorite" bind:order="orderRecipe"></recipe-card>
+      <empty-state wx:if="{{filteredRecipes.length === 0}}" title="这个分类还没有菜谱" desc="换个分类看看吧"></empty-state>
+    </scroll-view>
+  </view>
+
+  <floating-add-menu></floating-add-menu>
+</view>

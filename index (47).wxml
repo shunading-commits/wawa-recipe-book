@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "分类管理",
+  "usingComponents": {
+    "confirm-dialog": "/components/confirm-dialog/index"
+  }
+}

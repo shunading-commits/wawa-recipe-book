@@ -1,0 +1,15 @@
+<view class="page cats">
+  <view class="card list">
+    <view wx:for="{{categories}}" wx:key="id" class="cat">
+      <input value="{{item.name}}" disabled="{{item.id === 'all'}}" data-id="{{item.id}}" bindblur="rename" />
+      <button data-index="{{index}}" bindtap="up">↑</button>
+      <button data-index="{{index}}" bindtap="down">↓</button>
+      <button data-id="{{item.id}}" data-name="{{item.name}}" bindtap="askDelete" disabled="{{item.id === 'all'}}">删</button>
+    </view>
+  </view>
+  <view class="new card">
+    <input value="{{newName}}" placeholder="新分类名称" bindinput="inputNew" />
+    <button class="primary-btn" bindtap="add">新建分类</button>
+  </view>
+  <confirm-dialog show="{{confirming}}" title="删除分类" content="删除后该分类下菜谱会回到全部，是否继续？" bind:cancel="closeConfirm" bind:confirm="deleteCategory"></confirm-dialog>
+</view>

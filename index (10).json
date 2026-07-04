@@ -1,0 +1,45 @@
+.mask {
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  z-index: 20;
+  background: rgba(35, 53, 42, .35);
+}
+.dialog {
+  position: fixed;
+  left: 72rpx;
+  right: 72rpx;
+  top: 38%;
+  z-index: 21;
+  overflow: hidden;
+  background: #FFFFFF;
+  border-radius: 20rpx;
+}
+.title {
+  padding: 34rpx 32rpx 10rpx;
+  text-align: center;
+  color: #23352A;
+  font-size: 34rpx;
+  font-weight: 700;
+}
+.content {
+  padding: 12rpx 36rpx 34rpx;
+  text-align: center;
+  color: #6E7B72;
+}
+.actions {
+  display: flex;
+  border-top: 1rpx solid #E6EFE8;
+}
+button {
+  flex: 1;
+  border-radius: 0;
+  background: #FFFFFF;
+}
+.ok {
+  color: #357A4A;
+  font-weight: 700;
+  border-left: 1rpx solid #E6EFE8;
+}

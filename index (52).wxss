@@ -1,0 +1,7 @@
+{
+  "navigationBarTitleText": "收藏",
+  "usingComponents": {
+    "empty-state": "/components/empty-state/index",
+    "recipe-card": "/components/recipe-card/index"
+  }
+}

@@ -1,0 +1,47 @@
+{
+  "pages": [
+    "pages/menu/index",
+    "pages/order/index",
+    "pages/profile/index",
+    "pages/favorites/index",
+    "pages/recipe-detail/index",
+    "pages/recipe-edit/index",
+    "pages/recipe-import/index",
+    "pages/category-manage/index",
+    "pages/search/index"
+  ],
+  "window": {
+    "navigationBarTitleText": "蛙蛙电子菜谱",
+    "navigationBarBackgroundColor": "#69B96B",
+    "navigationBarTextStyle": "white",
+    "backgroundColor": "#F7FBF6"
+  },
+  "tabBar": {
+    "color": "#8A958D",
+    "selectedColor": "#357A4A",
+    "backgroundColor": "#FFFFFF",
+    "borderStyle": "white",
+    "list": [
+      {
+        "pagePath": "pages/menu/index",
+        "text": "菜谱",
+        "iconPath": "assets/tabbar/menu.png",
+        "selectedIconPath": "assets/tabbar/menu-active.png"
+      },
+      {
+        "pagePath": "pages/order/index",
+        "text": "点单",
+        "iconPath": "assets/tabbar/order.png",
+        "selectedIconPath": "assets/tabbar/order-active.png"
+      },
+      {
+        "pagePath": "pages/profile/index",
+        "text": "我的",
+        "iconPath": "assets/tabbar/profile.png",
+        "selectedIconPath": "assets/tabbar/profile-active.png"
+      }
+    ]
+  },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json"
+}

@@ -1,0 +1,9 @@
+<view class="frog {{small ? 'small' : ''}}">
+  <view class="eye left"></view>
+  <view class="eye right"></view>
+  <view class="face">
+    <view class="dot left"></view>
+    <view class="dot right"></view>
+    <view class="mouth"></view>
+  </view>
+</view>

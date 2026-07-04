@@ -1,0 +1,50 @@
+const storage = require('../../utils/storage');
+
+Page({
+  data: {
+    categories: [],
+    recipes: [],
+    filteredRecipes: [],
+    activeCategoryId: 'all'
+  },
+  onShow() {
+    this.load();
+  },
+  onShareAppMessage() {
+    return { title: '蛙蛙电子菜谱', path: '/pages/menu/index' };
+  },
+  load() {
+    const categories = storage.getCategories();
+    const recipes = storage.getRecipes();
+    this.setData({ categories, recipes }, this.filterRecipes);
+  },
+  filterRecipes() {
+    const id = this.data.activeCategoryId;
+    this.setData({
+      filteredRecipes: id === 'all' ? this.data.recipes : this.data.recipes.filter(item => item.categoryId === id)
+    });
+  },
+  selectCategory(e) {
+    this.setData({ activeCategoryId: e.detail.id }, this.filterRecipes);
+  },
+  openRecipe(e) {
+    wx.navigateTo({ url: '/pages/recipe-detail/index?id=' + e.detail.id });
+  },
+  favorite(e) {
+    storage.toggleFavorite(e.detail.id);
+    this.load();
+  },
+  orderRecipe(e) {
+    const result = storage.addOrderItem(e.detail.id);
+    wx.showToast({ title: result.ok ? '已加入点单' : result.message, icon: 'none' });
+  },
+  addManual() {
+    wx.navigateTo({ url: '/pages/recipe-edit/index' });
+  },
+  importUrl() {
+    wx.navigateTo({ url: '/pages/recipe-import/index' });
+  },
+  goSearch() {
+    wx.navigateTo({ url: '/pages/search/index' });
+  }
+});

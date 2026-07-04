@@ -1,0 +1,51 @@
+.hero {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 18rpx;
+  padding: 28rpx;
+}
+.hero-text {
+  flex: 1 1 360rpx;
+  min-width: 0;
+}
+.title {
+  color: #23352A;
+  font-size: 34rpx;
+  font-weight: 800;
+  white-space: nowrap;
+}
+.sub {
+  margin-top: 8rpx;
+  color: #6E7B72;
+  font-size: 24rpx;
+}
+.hero-actions {
+  display: flex;
+  gap: 12rpx;
+  width: 100%;
+}
+.hero-actions button {
+  flex: 1;
+  height: 62rpx;
+  padding: 0 22rpx;
+  line-height: 62rpx;
+  color: #357A4A;
+  background: #E7F6EA;
+  border-radius: 999rpx;
+  font-size: 24rpx;
+}
+.empty-wrap {
+  margin-top: 26rpx;
+}
+.layout {
+  display: flex;
+  gap: 18rpx;
+  height: calc(100vh - 230rpx);
+  margin-top: 22rpx;
+}
+.list {
+  flex: 1;
+  height: 100%;
+  padding-bottom: 130rpx;
+}

@@ -1,0 +1,48 @@
+.fab {
+  position: fixed;
+  right: 34rpx;
+  bottom: 178rpx;
+  z-index: 10;
+  width: 92rpx;
+  height: 92rpx;
+  padding: 0;
+  line-height: 88rpx;
+  color: #FFFFFF;
+  background: #69B96B;
+  border-radius: 50%;
+  font-size: 48rpx;
+  box-shadow: 0 14rpx 30rpx rgba(53, 122, 74, .20);
+}
+.mask {
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  z-index: 8;
+  background: rgba(35, 53, 42, .24);
+}
+.sheet {
+  position: fixed;
+  left: 24rpx;
+  right: 24rpx;
+  bottom: 0;
+  z-index: 9;
+  overflow: hidden;
+  padding-bottom: 34rpx;
+  border-radius: 28rpx 28rpx 0 0;
+}
+.sheet-title,
+.option {
+  padding: 34rpx;
+  text-align: center;
+  border-bottom: 1rpx solid #E6EFE8;
+}
+.sheet-title {
+  color: #6E7B72;
+}
+.option {
+  color: #23352A;
+  font-size: 32rpx;
+  font-weight: 600;
+}

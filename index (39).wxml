@@ -1,0 +1,16 @@
+<view class="editor">
+  <view wx:for="{{items}}" wx:key="id" class="step">
+    <view class="head">步骤 {{index + 1}}</view>
+    <textarea value="{{item.description}}" placeholder="写下制作步骤" data-index="{{index}}" bindinput="input"></textarea>
+    <view class="image-line">
+      <button data-index="{{index}}" bindtap="chooseImage">选择步骤图片</button>
+      <image wx:if="{{item.image}}" src="{{item.image}}" mode="aspectFill" />
+    </view>
+    <view class="ops">
+      <button data-index="{{index}}" bindtap="up">上移</button>
+      <button data-index="{{index}}" bindtap="down">下移</button>
+      <button data-index="{{index}}" bindtap="remove">删除</button>
+    </view>
+  </view>
+  <button class="add" bindtap="add">添加步骤</button>
+</view>

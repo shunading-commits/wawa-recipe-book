@@ -1,0 +1,48 @@
+function blank() {
+  return { id: 'ing_' + Date.now(), name: '', amount: '' };
+}
+
+Component({
+  properties: {
+    items: {
+      type: Array,
+      value: [blank()]
+    }
+  },
+  methods: {
+    emit(items) {
+      this.triggerEvent('change', { items });
+    },
+    input(e) {
+      const items = this.data.items.slice();
+      items[e.currentTarget.dataset.index][e.currentTarget.dataset.field] = e.detail.value;
+      this.emit(items);
+    },
+    add() {
+      this.emit(this.data.items.concat(blank()));
+    },
+    remove(e) {
+      const items = this.data.items.slice();
+      if (items.length === 1) {
+        this.emit([blank()]);
+        return;
+      }
+      items.splice(e.currentTarget.dataset.index, 1);
+      this.emit(items);
+    },
+    up(e) {
+      const index = e.currentTarget.dataset.index;
+      const items = this.data.items.slice();
+      if (index <= 0) return;
+      [items[index - 1], items[index]] = [items[index], items[index - 1]];
+      this.emit(items);
+    },
+    down(e) {
+      const index = e.currentTarget.dataset.index;
+      const items = this.data.items.slice();
+      if (index >= items.length - 1) return;
+      [items[index + 1], items[index]] = [items[index], items[index + 1]];
+      this.emit(items);
+    }
+  }
+});

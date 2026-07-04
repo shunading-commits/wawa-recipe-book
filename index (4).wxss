@@ -1,0 +1,6 @@
+<scroll-view scroll-y class="side">
+  <view wx:for="{{categories}}" wx:key="id" class="item {{activeId === item.id ? 'active' : ''}}" bindtap="select" data-id="{{item.id}}">
+    {{item.name}}
+  </view>
+  <view class="manage" bindtap="manage">分类管理</view>
+</scroll-view>

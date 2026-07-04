@@ -1,0 +1,29 @@
+<view class="page order-page">
+  <view wx:if="{{items.length}}" class="summary card">
+    <view>
+      <view class="summary-title">今日点单</view>
+      <view class="summary-sub">共 {{totalCount}} 份，先记下来，做饭不乱</view>
+    </view>
+    <button bindtap="clear">清空</button>
+  </view>
+
+  <view wx:for="{{items}}" wx:key="recipeId" class="order-card card">
+    <view class="cover">
+      <image wx:if="{{item.recipe.coverImage}}" src="{{item.recipe.coverImage}}" mode="aspectFill" />
+      <view wx:else>☘</view>
+    </view>
+    <view class="info" bindtap="openRecipe" data-id="{{item.recipeId}}">
+      <view class="name">{{item.recipe.title}}</view>
+      <view class="desc">{{item.recipe.description || '还没有简介'}}</view>
+    </view>
+    <view class="counter">
+      <button data-id="{{item.recipeId}}" data-count="{{item.count - 1}}" bindtap="setCount">-</button>
+      <text>{{item.count}}</text>
+      <button data-id="{{item.recipeId}}" data-count="{{item.count + 1}}" bindtap="setCount">+</button>
+    </view>
+  </view>
+
+  <view wx:if="{{!items.length}}" class="card">
+    <empty-state title="还没有点单" desc="在菜谱页点“点单”，这里会帮你记下要做的菜"></empty-state>
+  </view>
+</view>

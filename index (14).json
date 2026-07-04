@@ -1,0 +1,10 @@
+<view class="empty">
+  <frog-logo></frog-logo>
+  <view class="book">📗</view>
+  <view class="title">{{title}}</view>
+  <view class="desc" wx:if="{{desc}}">{{desc}}</view>
+  <view class="actions" wx:if="{{primaryText || secondaryText}}">
+    <button wx:if="{{primaryText}}" class="primary-btn" bindtap="onPrimary">{{primaryText}}</button>
+    <button wx:if="{{secondaryText}}" class="ghost-btn" bindtap="onSecondary">{{secondaryText}}</button>
+  </view>
+</view>

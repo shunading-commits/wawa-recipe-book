@@ -1,0 +1,15 @@
+<view class="recipe-card card" bindtap="open">
+  <view class="cover">
+    <image wx:if="{{recipe.coverImage}}" src="{{recipe.coverImage}}" mode="aspectFill" />
+    <view wx:else class="leaf">☘</view>
+  </view>
+  <view class="info">
+    <view class="title">{{recipe.title}}</view>
+    <view class="desc">{{recipe.description || '还没有简介'}}</view>
+    <view class="meta">{{recipe.cookingTime || '时间待填'}} · {{recipe.difficulty || '简单'}}</view>
+    <view class="actions">
+      <button catchtap="order" class="order">点单</button>
+      <button catchtap="favorite" class="fav">{{recipe.isFavorite ? '已收藏' : '收藏'}}</button>
+    </view>
+  </view>
+</view>
